@@ -11,7 +11,6 @@ const store = useTodos();
 
 store.$subscribe(
   (mutation, state) => {
-    console.log('Store updated:', mutation, state);
     // persist the whole state to the local storage whenever it changes
     localStorage.setItem('todos', JSON.stringify(state.todos));
   },

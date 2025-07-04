@@ -2,10 +2,6 @@
 import AddTask from './components/AddTask.vue';
 import TodoFilter from './components/TodoFilter.vue';
 import TodoList from './components/TodoList.vue';
-import { useTodos } from './stores/todos';
-
-const todos = useTodos();
-console.log('Todos store aoo.vue:', todos);
 </script>
 
 <template>
