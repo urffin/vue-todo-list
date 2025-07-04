@@ -37,7 +37,7 @@
           />
         </div>
         <div class="modal-footer">
-          <button type="submit" :disabled="newTask.length == 0" class="add-btn text">
+          <button type="submit" :disabled="newTask.trim().length == 0" class="add-btn text">
             Создать
           </button>
         </div>
