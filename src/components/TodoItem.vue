@@ -31,7 +31,9 @@ function finishTask() {
 <template>
   <tr>
     <td class="action">
-      <button class="btn" @click="finishTask"><IconStatus :is-finished="task.isFinished" /></button>
+      <button class="btn" aria-label="Закончить задачу" @click="finishTask">
+        <IconStatus :is-finished="task.isFinished" />
+      </button>
     </td>
     <td>{{ task.text }}</td>
     <td :class="task.isFinished ? 'done' : 'inwork'">{{ formattedStatus }}</td>

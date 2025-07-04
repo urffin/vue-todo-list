@@ -1,12 +1,14 @@
 <template>
-  <button class="add-task-modal" @click="open = true"><IconPlus /></button>
+  <button class="add-task-modal" aria-label="Добавить задачу" @click="open = true">
+    <IconPlus />
+  </button>
 
   <Teleport to="body">
     <div class="modal" v-if="open" @click.self="open = false">
       <form @submit.prevent="addTask" class="add-task-form">
         <div class="modal-header">
           <h2 class="title">Создать новую задачу</h2>
-          <button type="button" class="close-button" @click="close">
+          <button type="button" aria-label="Закрыть" class="close-button" @click="close">
             <svg
               width="22"
               height="22"
@@ -37,7 +39,12 @@
           />
         </div>
         <div class="modal-footer">
-          <button type="submit" :disabled="newTask.trim().length == 0" class="add-btn text">
+          <button
+            type="submit"
+            aria-label="Создать"
+            :disabled="newTask.trim().length == 0"
+            class="add-btn text"
+          >
             Создать
           </button>
         </div>
