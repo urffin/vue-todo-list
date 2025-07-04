@@ -1,47 +1,38 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import AddTask from './components/AddTask.vue';
+import TodoFilter from './components/TodoFilter.vue';
+import TodoList from './components/TodoList.vue';
+import { useTodos } from './stores/todos';
+
+const todos = useTodos();
+console.log('Todos store aoo.vue:', todos);
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <h1 class="title">To do list</h1>
+    <AddTask />
   </header>
 
+  <TodoFilter />
   <main>
-    <TheWelcome />
+    <TodoList />
   </main>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.title {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 132%;
+  letter-spacing: 0;
 }
 </style>
